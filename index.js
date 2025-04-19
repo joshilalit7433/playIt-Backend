@@ -22,7 +22,7 @@ app.use(cookieParser());
 const corsOptions = {
   origin: [
     "http://localhost:3000",
-    "https://amazing-quokka-368ad2.netlify.app/",
+    "https://amazing-quokka-368ad2.netlify.app",
   ],
   credentials: true,
 };
