@@ -20,8 +20,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 const corsOptions = {
-    origin: "http://localhost:3000",
-    credentials: true,
+  origin: [
+    "http://localhost:3000",
+    "https://amazing-quokka-368ad2.netlify.app/",
+  ],
+  credentials: true,
 };
 app.use(cors(corsOptions));
 
@@ -41,18 +44,18 @@ app.use("/api/v1/subscription", subscriptionRoute);
 
 // Start server and store instance
 const server = app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
 
 // Graceful shutdown to avoid EADDRINUSE on restart
 const cleanup = () => {
-    console.log("Shutting down server...");
-    server.close(() => {
-        console.log("Server closed gracefully.");
-        process.exit(0);
-    });
+  console.log("Shutting down server...");
+  server.close(() => {
+    console.log("Server closed gracefully.");
+    process.exit(0);
+  });
 };
 
 // Handle process termination signals
-process.on("SIGTERM", cleanup);  // Nodemon restart triggers this
-process.on("SIGINT", cleanup);   // Ctrl+C triggers this
+process.on("SIGTERM", cleanup); // Nodemon restart triggers this
+process.on("SIGINT", cleanup); // Ctrl+C triggers this
