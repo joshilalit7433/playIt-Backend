@@ -22,7 +22,7 @@ app.use(cookieParser());
 const corsOptions = {
   origin: [
     "http://localhost:3000",
-    "https://fluffy-bienenstitch-7d7b3b.netlify.app",
+    "https://lambent-kringle-b15d3a.netlify.app",
   ],
   credentials: true,
 };
