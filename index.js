@@ -20,10 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 const corsOptions = {
-  origin: [
-    "http://localhost:3000",
-    "https://lambent-kringle-b15d3a.netlify.app",
-  ],
+  origin: ["http://localhost:3000", "https://playit-app.netlify.app"],
   credentials: true,
 };
 app.use(cors(corsOptions));
