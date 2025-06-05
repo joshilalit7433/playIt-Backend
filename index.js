@@ -39,6 +39,11 @@ app.use("/api/v1/booking", bookingRoute);
 app.use("/api/v1/payment", paymentRoute);
 app.use("/api/v1/subscription", subscriptionRoute);
 
+app.get("/", (req, res) => {
+  res.send("Welcome to the PlayIt Backend API");
+});
+
+
 // Start server and store instance
 const server = app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
