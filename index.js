@@ -43,6 +43,11 @@ app.get("/", (req, res) => {
   res.send("Welcome to the PlayIt Backend API");
 });
 
+app.get("/health", (req, res) => {
+  res.status(200).json({ status: "ok" });
+});
+
+
 
 // Start server and store instance
 const server = app.listen(PORT, () => {
